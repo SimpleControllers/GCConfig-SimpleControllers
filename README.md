@@ -1,7 +1,7 @@
 # GCConfig-SimpleControllers
 Make Software Modifications to your Gamecube Controller!
 
-This code utalizes the Nicohood Library: https://github.com/NicoHood/Nintendo
+This code utilizes the Nicohood Library: https://github.com/NicoHood/Nintendo
 
 Tutorial on how to build: https://goo.gl/XCaJDH
 
