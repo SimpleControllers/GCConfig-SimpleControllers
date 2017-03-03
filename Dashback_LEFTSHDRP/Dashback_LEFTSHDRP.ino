@@ -84,7 +84,7 @@ void loop()
 
     if (r1.dleft == 1){
       d.report.yAxis = 128-52;
-      d.report.left = 0;
+      d.report.dleft = 0;
     }
     
     //The dashback modification
