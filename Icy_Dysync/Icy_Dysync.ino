@@ -38,6 +38,10 @@ void loop()
     auto r1 = GamecubeController1.getReport();
     Gamecube_Data_t d = defaultGamecubeData;
 
+    //NEW! Zeros the controller on startup
+    d.origin = GamecubeController1.getOrigin();
+    //Huge thanks to SeanMombo for debugging/figuring this out!
+
     //Reporting all buttons, sticks, sliders
     d.report.a = r1.a;
     d.report.b = r1.b;
@@ -68,8 +72,8 @@ void loop()
       //If no one jumps raise this by one or two 
       //One way to fix would be to have DPad (Left and right lower and raise the Y Value
       //This way you can set it in game and not have to worry
-      d.report.yAxis = 184;
-      d.report.xAxis = 127;
+      d.report.yAxis = 181;
+      d.report.xAxis = 128;
       d.report.x = 0;
     }
 

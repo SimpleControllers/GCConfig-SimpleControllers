@@ -44,6 +44,10 @@ void loop()
     auto r1 = GamecubeController1.getReport();
     Gamecube_Data_t d = defaultGamecubeData;
 
+    //NEW! Zeros the controller on startup
+    d.origin = GamecubeController1.getOrigin();
+    //Huge thanks to SeanMombo for debugging/figuring this out!
+
     //Zeros the xAxis in the code
     if (i == 1){
       int X = r1.xAxis;
@@ -54,8 +58,8 @@ void loop()
 
     //if the x axis is between these two than set buffer to eight
     if (r1.xAxis > X-21 && r1.xAxis < X+21){
-      //CHANGE THIS BUFFERRR IF NEEDED OR PLAYING ON CONSOLE
-      bufferrr = 8;
+      //CHANGE THIS TO 8 IF PLAYING ON DOLPHIN
+      bufferrr = 2;
     }
 
 
@@ -104,9 +108,7 @@ void loop()
       delay(100);
     }
 
-    // This just enables the rumble you can disable rumble completely if wanted
-    // Can be useful if you don't want to turn off rumble on setups
-    // But don't want to remove your actual rumble pack.
+
     if (d.status.rumble) {
       GamecubeController1.setRumble(true);
     }

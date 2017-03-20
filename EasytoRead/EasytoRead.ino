@@ -38,6 +38,10 @@ void loop()
     auto r1 = GamecubeController1.getReport();
     Gamecube_Data_t d = defaultGamecubeData;
 
+    //NEW! Zeros the controller on startup
+    d.origin = GamecubeController1.getOrigin();
+    //Huge thanks to SeanMombo for debugging/figuring this out!
+
     //Reporting all buttons, sticks, sliders
     d.report.a = r1.a;
     d.report.b = r1.b;
